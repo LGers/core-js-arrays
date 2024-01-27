@@ -434,10 +434,10 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  const row = Array(n).fill(0);
+  const row = Array(n).fill(null);
 
   return row.map((r, idx) => {
-    return row.with(idx, 1);
+    return row.map((el, idx2) => (idx === idx2 ? 1 : 0));
   });
 }
 
